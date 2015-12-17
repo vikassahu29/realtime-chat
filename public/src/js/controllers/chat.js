@@ -4,7 +4,6 @@
 
   angular.module('realtimeChat').controller('ChatController', ['$scope',
     'socket', function($scope, socket) {
-      $scope.page = 'Chat Page';
       $scope.messages = [];
 
       socket.on('joined', function(data) {
@@ -17,10 +16,8 @@
 
       $scope.sendMessage = function() {
         if ($scope.newMessage !== undefined && $scope.newMessage.length > 0) {
-          socket.emit('message', $scope.newMessage, function(data) {
-            console.log(data);
-            $scope.newMessage = undefined;
-          });
+          socket.emit('message', $scope.newMessage);
+          $scope.newMessage = undefined;
         }
       };
 

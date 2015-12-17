@@ -1,6 +1,32 @@
-<h1>{{page}}</h1>
-<div ng-repeat="message in messages track by $index">
-{{message}}
+<div layout="row" layout-align="center center">
+<md-card flex-gt-sm="90" flex-gt-md="90" style="height:500px">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h3>
+        <span>Messages</span>
+      </h3>
+    </div>
+  </md-toolbar>
+  <md-content scroll-to-bottom="messages" flex>
+      <md-list>
+        <md-list-item class="md-3-line" ng-repeat="message in messages track by $index">
+          <div class="md-list-item-text">
+            <h3>{{message.user}}</h3>
+            <p>
+              {{message.data}}
+            </p>
+          </div>
+          <md-divider inset></md-divider>
+        </md-list-item>
+      </md-list>
+  </md-content>
+  <md-divider/>
+  <form ng-submit="sendMessage()" layout="row">
+  <md-input-container flex>
+          <label>New Message</label>
+          <input ng-model="newMessage" type="message">
+  </md-input-container>
+  <md-button type="submit" ng-disabled="!newMessage">Send</md-button>
+  </form>
+</md-card>
 </div>
-<input type="text" ng-model="newMessage" placeholder="Type your message here"/>
-<button type="button" ng-click="sendMessage()">Send</button>

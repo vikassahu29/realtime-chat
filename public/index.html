@@ -2,11 +2,17 @@
 <html ng-app="realtimeChat">
 <head>
   <title>realtime-chat</title>
+  <link href="dist/css/vendor.css" rel="stylesheet" />
 </head>
 <body>
-  <a ui-sref="home">Home</a>
-  <a ui-sref="chat">Chat</a>
-  <div ui-view><div>
+  <md-toolbar layout="row" >
+      <h3>Realtime Chat</h3>
+      <span flex></span>
+      <md-button>
+        Login
+      </md-button>
+  </md-toolbar>
+  <div ui-view></div>
   <script src="dist/js/vendor.js"></script>
   <script src="dist/js/app.min.js"></script>
 </body>

@@ -19,8 +19,9 @@ io.on('connection', function(socket) {
   socket.emit('joined', {message: 'You have Joined'});
 
   socket.on('message', function(data) {
-    socket.emit('message', data);
-    socket.broadcast.emit('message', data);
+    var date = new Date();
+    socket.emit('message', {user: 'Sample', data: data, date: date});
+    socket.broadcast.emit('message', {user: 'Sample', data: data, date: date});
   });
 
 });

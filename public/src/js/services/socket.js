@@ -1,6 +1,6 @@
 (function() {
 
-  'use struct';
+  'use strict';
 
   angular.module('realtimeChat').factory('socket', ['socketFactory',
     function(socketFactory) {

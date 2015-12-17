@@ -2,7 +2,8 @@
 
   'use strict';
 
-  var app = angular.module('realtimeChat', ['ui.router', 'btford.socket-io']);
+  var app = angular.module('realtimeChat', ['ui.router', 'btford.socket-io',
+                          'ngMaterial']);
   app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 

@@ -54,15 +54,23 @@ module.exports = function(grunt) {
     bower_concat: {
       all: {
         dest: 'public/dist/js/vendor.js',
+        cssDest: 'public/dist/css/vendor.css',
         mainFiles: {
           'angular': 'angular.min.js',
           'angular-ui-router': 'release/angular-ui-router.min.js',
           'angular-socket-io': 'socket.min.js',
-          'socket.io-client': 'socket.io.js'
+          'socket.io-client': 'socket.io.js',
+          'angular-aria': 'angular-aria.min.js',
+          'angular-animate': 'angular-animate.min.js',
+          'angular-material': ['angular-material.min.js',
+                              'angular-material.min.css']
         },
         dependencies: {
           'angular-ui-router': 'angular',
-          'angular-socket-io': ['socket.io-client', 'angular']
+          'angular-socket-io': ['socket.io-client', 'angular'],
+          'angular-animate': 'angular',
+          'angular-aria': 'angular',
+          'angular-material': ['angular-animate', 'angular-aria']
         }
       }
     }
