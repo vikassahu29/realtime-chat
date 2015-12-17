@@ -4,6 +4,7 @@
 
   var app = angular.module('realtimeChat', ['ui.router', 'btford.socket-io',
                           'ngMaterial', 'ngStorage']);
+                          
   app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
