@@ -63,14 +63,16 @@ module.exports = function(grunt) {
           'angular-aria': 'angular-aria.min.js',
           'angular-animate': 'angular-animate.min.js',
           'angular-material': ['angular-material.min.js',
-                              'angular-material.min.css']
+                              'angular-material.min.css'],
+          'ngstorage': 'ngStorage.min.js'
         },
         dependencies: {
           'angular-ui-router': 'angular',
           'angular-socket-io': ['socket.io-client', 'angular'],
           'angular-animate': 'angular',
           'angular-aria': 'angular',
-          'angular-material': ['angular-animate', 'angular-aria']
+          'angular-material': ['angular-animate', 'angular-aria'],
+          'ngstorage': 'angular'
         }
       }
     }

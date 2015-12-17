@@ -2,3 +2,5 @@ node_modules
 public/dist
 bower_components
 .DS_Store
+lib/config/auth.js
+lib/config/db.js

@@ -5,10 +5,10 @@
   <link href="dist/css/vendor.css" rel="stylesheet" />
 </head>
 <body>
-  <md-toolbar layout="row" >
+  <md-toolbar layout="row" ng-controller="ToolbarController">
       <h3>Realtime Chat</h3>
       <span flex></span>
-      <md-button>
+      <md-button ng-click="openLoginPage()">
         Login
       </md-button>
   </md-toolbar>

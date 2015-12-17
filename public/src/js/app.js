@@ -3,7 +3,7 @@
   'use strict';
 
   var app = angular.module('realtimeChat', ['ui.router', 'btford.socket-io',
-                          'ngMaterial']);
+                          'ngMaterial', 'ngStorage']);
   app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
@@ -15,6 +15,12 @@
           url: '/',
           templateUrl: 'partial-home.html',
           controller: 'HomeController'
+        })
+
+        .state('login', {
+          url: '/login',
+          templateUrl: 'partial-login.html',
+          controller: 'LoginController'
         })
 
         .state('chat', {

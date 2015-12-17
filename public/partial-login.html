@@ -1,0 +1,15 @@
+<div layout="row" layout-align="center center">
+<md-card flex-gt-sm="60" flex-gt-md="60">
+    <form ng-submit="loginUser()" layout="column">
+    <md-input-container flex>
+      <label>Email</label>
+      <input ng-model="user.email" type="email" required>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Password</label>
+      <input ng-model="user.password" type="password" required>
+    </md-input-container>
+    <md-button type="submit" class="md-raised" ng-disabled="!user.email">Login</md-button>
+  </form>
+</md-card>
+</div>
