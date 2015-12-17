@@ -1,19 +1,20 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    
+
     jshint: {
-      all: ['public/src/js/**/*.js', 'public/src/js/*.js'] 
+      all: ['public/src/js/**/*.js', 'public/src/js/*.js']
     },
-    
+
     uglify: {
       build: {
         files: {
-          'public/dist/js/app.min.js': ['public/src/js/**/*.js', 'public/src/js/*.js']
+          'public/dist/js/app.min.js': ['public/src/js/**/*.js',
+                                        'public/src/js/*.js']
         }
       }
     },
-    
+
     cssmin: {
       build: {
         files: {
@@ -21,31 +22,50 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     watch: {
       css: {
         files: ['public/src/css/**/*.css'],
-        tasks: [ 'cssmin']
+        tasks: ['cssmin']
       },
       js: {
         files: ['public/src/js/**/*.js', 'public/src/js/*.js'],
         tasks: ['jshint', 'uglify']
+      },
+      bower: {
+        files: ['bower.json'],
+        tasks: ['bower_concat']
       }
     },
-
 
     nodemon: {
       dev: {
         script: 'index.js'
       }
     },
-    
+
     concurrent: {
       options: {
         logConcurrentOutput: true
       },
       tasks: ['nodemon', 'watch']
-    }   
+    },
+
+    bower_concat: {
+      all: {
+        dest: 'public/dist/js/vendor.js',
+        mainFiles: {
+          'angular': 'angular.min.js',
+          'angular-ui-router': 'release/angular-ui-router.min.js',
+          'angular-socket-io': 'socket.min.js',
+          'socket.io-client': 'socket.io.js'
+        },
+        dependencies: {
+          'angular-ui-router': 'angular',
+          'angular-socket-io': ['socket.io-client', 'angular']
+        }
+      }
+    }
 
   });
 
@@ -55,7 +75,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-bower-concat');
 
-  grunt.registerTask('default', ['cssmin', 'jshint', 'uglify', 'concurrent']);  
+  grunt.registerTask('default', ['cssmin', 'jshint', 'uglify', 'bower_concat',
+  'concurrent']);
 
 };

@@ -1,0 +1,24 @@
+{
+  "name": "realtime-chat",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Vikas Sahu"
+  ],
+  "homepage": "https://github.com/vikassahu29/realtime-chat",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.8",
+    "angular-socket-io": "~0.7.0",
+    "socket.io-client": "~1.3.7"
+  }
+}
