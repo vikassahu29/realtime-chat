@@ -3,7 +3,9 @@
   'use strict';
 
   angular.module('realtimeChat').controller('HomeController', ['$scope',
-    function($scope) {
-      $scope.page = 'Home Page';
+  '$state', function($scope, $state) {
+      $scope.openLoginPage = function() {
+        $state.go('login');
+      };
     }]);
 })();

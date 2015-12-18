@@ -1,0 +1,28 @@
+<div layout="row" layout-align="center center">
+<md-card flex-gt-sm="60" flex-gt-md="60" id="toastBounds">
+  <form ng-submit="signupUser()" layout="column" ng-hide="signUpComplete">
+    <md-input-container flex>
+      <label>Name</label>
+      <input ng-model="user.name" type="text" required>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Email</label>
+      <input ng-model="user.email" type="email" required>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Password</label>
+      <input ng-model="user.password" type="password" required>
+    </md-input-container>
+    <div layout="row">
+      <md-button type="submit" class="md-raised">Sign Up</md-button>
+    </div>
+  </form>
+  <div ng-show="signUpComplete">
+    <md-card-title>
+      <md-card-title-text>
+    Congratulations! {{name}}, You have been successfully registered. Please Login.
+      </md-card-title-text>
+    </md-card-title>
+  </div>
+</md-card>
+</div>

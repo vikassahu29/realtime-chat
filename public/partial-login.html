@@ -1,5 +1,5 @@
 <div layout="row" layout-align="center center">
-<md-card flex-gt-sm="60" flex-gt-md="60">
+<md-card flex-gt-sm="60" flex-gt-md="60" id="toastBounds">
     <form ng-submit="loginUser()" layout="column">
     <md-input-container flex>
       <label>Email</label>
@@ -9,7 +9,10 @@
       <label>Password</label>
       <input ng-model="user.password" type="password" required>
     </md-input-container>
+    <div layout="row">
     <md-button type="submit" class="md-raised" ng-disabled="!user.email">Login</md-button>
+    <md-button type="button" class="md-raised md-accent md-hue-2" ng-click="openSignupPage()">Sign Up</md-button>
+    </div>
   </form>
 </md-card>
 </div>

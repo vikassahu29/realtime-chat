@@ -4,7 +4,7 @@
 
   var app = angular.module('realtimeChat', ['ui.router', 'btford.socket-io',
                           'ngMaterial', 'ngStorage']);
-                          
+
   app.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
@@ -22,6 +22,12 @@
           url: '/login',
           templateUrl: 'partial-login.html',
           controller: 'LoginController'
+        })
+
+        .state('signup', {
+          url: '/signup',
+          templateUrl: 'partial-signup.html',
+          controller: 'SignUpController'
         })
 
         .state('chat', {

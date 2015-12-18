@@ -6,11 +6,16 @@
 </head>
 <body>
   <md-toolbar layout="row" ng-controller="ToolbarController">
+    <div class="md-toolbar-tools">
       <h3>Realtime Chat</h3>
       <span flex></span>
-      <md-button ng-click="openLoginPage()">
+      <md-button ng-click="openLoginPage()" ng-hide="loggedIn">
         Login
       </md-button>
+      <md-button ng-click="logoutUser()" ng-show="loggedIn">
+        Logout
+      </md-button>
+    </div>
   </md-toolbar>
   <div ui-view></div>
   <script src="dist/js/vendor.js"></script>

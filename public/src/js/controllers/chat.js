@@ -7,6 +7,8 @@
       $localStorage, $rootScope) {
       if ($localStorage.token) {
         $rootScope.$broadcast('authenticated');
+      } else {
+        $state.go('login');
       }
 
       $scope.messages = [];
